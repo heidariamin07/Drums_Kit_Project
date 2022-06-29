@@ -35,7 +35,9 @@ for(i = 0; i < numbeOfDrumButtons; i++){
 
 
         }
+        buttonAnimation(buttonInnerHTML);
     })
+
 
 
 }
@@ -74,4 +76,13 @@ document.addEventListener("keypress", function (event){
 
 
     }
+    buttonAnimation(event.key)
 });
+
+function buttonAnimation(currentKey){
+    let activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function(){activeButton.classList.remove("pressed");},100);
+
+
+}
